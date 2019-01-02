@@ -1,9 +1,9 @@
-function calcOffsetTime(city, current_offset) {
+function calcOffsetTime(city, value) {
     var date = new Date();
-
-    var utc_offset = date.getTimezoneOffset();
-    date.setMinutes(date.getMinutes() + utc_offset * current_offset);
-    return city + date.toLocaleTimeString()
+    
+    date.setMinutes(date.getMinutes() + date.getTimezoneOffset() * value);
+    console.log(city + date.toLocaleTimeString());
+    return city + date.toLocaleTimeString();
 }
 
 module.exports = {
